@@ -1,0 +1,38 @@
+.onLoad <- function(...) {
+  register_s3_method("coda", "as.mcmc", "nlist")
+  register_s3_method("coda", "as.mcmc", "nlists")
+  register_s3_method("coda", "as.mcmc.list", "nlist")
+  register_s3_method("coda", "as.mcmc.list", "nlists")
+  register_s3_method("stats", "aggregate", "nlist")
+  register_s3_method("stats", "aggregate", "nlists")
+  register_s3_method("term", "as.term", "nlist")
+  register_s3_method("term", "as.term", "nlists")
+  register_s3_method("term", "npdims", "nlist")
+  register_s3_method("term", "npdims", "nlists")
+  register_s3_method("term", "nterms", "nlist")
+  register_s3_method("term", "nterms", "nlists")
+  register_s3_method("term", "pars", "nlist")
+  register_s3_method("term", "pars", "nlists")
+  register_s3_method("term", "pdims", "nlist")
+  register_s3_method("term", "pdims", "nlists")
+  invisible()
+}
+
+register_s3_method <- function(pkg, generic, class) {
+  stopifnot(is.character(pkg), length(pkg) == 1)
+  stopifnot(is.character(generic), length(generic) == 1)
+  stopifnot(is.character(class), length(class) == 1)
+
+  fun <- get(paste0(generic, ".", class), envir = parent.frame())
+
+  if (pkg %in% loadedNamespaces()) {
+    registerS3method(generic, class, fun, envir = asNamespace(pkg))
+  }
+
+  setHook(
+    packageEvent(pkg, "onLoad"),
+    function(...) {
+      registerS3method(generic, class, fun, envir = asNamespace(pkg))
+    }
+  )
+}
