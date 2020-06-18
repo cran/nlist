@@ -1,3 +1,7 @@
+# nlist 0.1.1
+
+- Fix tests ready for term 0.2.0.
+
 # nlist 0.1.0
 
 - Added `fill_na()` for natomic, nlist and nlists objects.

@@ -1,7 +1,7 @@
-ee39c9073381814348b0e96d41970d34 *DESCRIPTION
+2551cc1e3b66a4cbb59d006c8fd6af8e *DESCRIPTION
 5681489d856e788b5885d1042912c4f4 *LICENSE
-aa0a9ce81df9960ddd6989437a2060b4 *NAMESPACE
-7826b0d920cbce4267631d5f72cb1a3b *NEWS.md
+2d5593313381c18a755ef20789f10879 *NAMESPACE
+4faf2c428b55f23a15289cdbceada36e *NEWS.md
 8edbc6d9fbda8a8851789aad07ac73ea *R/aggregate.R
 59c18a3b5044966e7ab51f372d1c4d31 *R/any-na.R
 3b7d21ca9ab0f411ac1cddd5d7947e7e *R/as-mcmc-list.R
@@ -16,9 +16,9 @@ b181bac7d2da65046b17598821819ac3 *R/c.R
 2850bb8860a30dd985c165c888f6271b *R/fill-na.R
 637ef9132e15366cdf1ccb421c7b7f55 *R/internal.R
 462982929f8cf5c0dde4e1e7db7fb062 *R/is.R
-12c160f269fe74f785f827194ffe4c86 *R/namespace.R
+67b1b0d434dea4c62adc04e766e5c6ab *R/namespace.R
 e1ba8319a7e6eb010f7ee49983081cec *R/natomic-object.R
-3f05b039f9e6a5ff296bf360ddef2528 *R/nchains.R
+9ecb12d73c2c400ba29fb6094f49891a *R/nchains.R
 033cc015b4bcd69e902f594a217a4028 *R/niters.R
 363902dff9acdb4812877cea3916031e *R/nlist-object.R
 91d505a65e5c6fa927f10d35671bcfac *R/nlist.R
@@ -29,7 +29,7 @@ e893fcd9ff366ab299fb6ff211a0a8c0 *R/nsams.R
 318bdf4f05dedf352bc9394a4c53fc8d *R/nsims.R
 60a87f4c2b6e866845c8419f9261e528 *R/nterms.R
 a5273dcc50a1e07d066ae368797406f8 *R/numericise.R
-2284a3d9123701a5f9faff16892a7c0f *R/pars.R
+3a2fbfff0c8ff9191d70c265cbf38a67 *R/pars.R
 610ff0d218d4da3a8896005d226f5200 *R/pdims.R
 8375021c69a3f0c7e190e43d794e4fdc *R/print.R
 439d2f2062253e17785238be94998008 *R/relist-nlist.R
@@ -38,7 +38,7 @@ a5273dcc50a1e07d066ae368797406f8 *R/numericise.R
 01b36a37df9f70ecb5bab523a5e89205 *R/unlist-nlist.R
 ee5bcf3ea0d9b277ecc5c03f1e71ab12 *R/vld.R
 49639b96296a3814d688da42e139606e *R/zzz.R
-2ba71f47973291de5ed62faf43ee272a *README.md
+e1e8d706d3b8b6ad71c39cb4f8bd0167 *README.md
 73cc39e91fccd83f27f2fef0234a8aa3 *man/aggregate.nlist.Rd
 27b8084c9dc3bee00f7b981df0f59b60 *man/aggregate.nlists.Rd
 04fd5dcf46e8f5dc983612a2ecf9ec54 *man/as.mcmc.list.nlist.Rd
@@ -52,7 +52,7 @@ f8f4258c76640c3822a13eea638ac953 *man/chk_natomic.Rd
 d46ea75685d48a87cf45e78bf45b40de *man/fill_na.Rd
 ee95277c7301e3dfa16af203765a9d95 *man/is_natomic.Rd
 b1d0394c93c296f7b5f2913acdf80a13 *man/natomic-object.Rd
-698947c9fa61a707f4e3b4977a60b99f *man/nchains.Rd
+4b192dbb4123bad61e517a3eff7fd8c7 *man/nchains.Rd
 6e8e9824e81761d4c35f31c01702ec8a *man/niters.Rd
 d39749d9e222e370c69dc9f17c32e016 *man/nlist-object.Rd
 51e243409fdaf94ce13cf0c7be7f3080 *man/nlist.Rd
@@ -83,7 +83,7 @@ d63ff39d88d62e947f7e016c49321061 *tests/testthat/test-any-na.R
 7b415100ddfd71f10547425ff66e6af4 *tests/testthat/test-as-mcmc.R
 10198eab1928db97c74fbb2cedaba83b *tests/testthat/test-as-nlist.R
 dcc0c584a7a1aaf7d3322b2913d03c6a *tests/testthat/test-as-nlists.R
-4e074e34b68505971019a2f5a6a2ef52 *tests/testthat/test-as-term.R
+03110d539962ae8cfb76aadf0ed6e412 *tests/testthat/test-as-term.R
 cf141e709eae6cb6a056928d583a8b4c *tests/testthat/test-base.R
 eeb1af6991ddbd8ac521189efb804cef *tests/testthat/test-brackets.R
 4d20c04343d040057c66dae129dd8a9b *tests/testthat/test-c.R
