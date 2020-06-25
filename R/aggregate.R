@@ -3,8 +3,8 @@
 #' Aggregates an [nlist_object()] into a named list of numeric scalars.
 #'
 #' @param x An nlist object.
-#' @param fun A function that given a numeric vector returns a numeric scalar.
 #' @param ... Additional arguments passed to fun.
+#' @inheritParams params
 #'
 #' @return An named list of numeric scalars
 #' @export
@@ -13,6 +13,10 @@
 #' aggregate(nlist(x = 1:9))
 #' aggregate(nlist(y = 3:5, zz = matrix(1:9, 3)), fun = function(x) x[1])
 aggregate.nlist <- function(x, fun = mean, ...) {
+  deprecate_soft("0.1.1",
+    what = "nlist::aggregate.nlist()",
+    with = "nlist::estimates.nlist()"
+  )
   lapply(x, aggregate_atomic_numeric, fun, ...)
 }
 
@@ -23,7 +27,6 @@ aggregate.nlist <- function(x, fun = mean, ...) {
 #' with `nchains` [nlist_object()]s.
 #'
 #' @inheritParams aggregate.nlist
-#' @param fun A function that given a numeric vector returns a numeric scalar.
 #' @param by_chain A flag specifying whether to aggregate by chains.
 #' @return An nlist object if `by_chain = FALSE` otherwise an nlists object.
 #' @export
@@ -31,12 +34,16 @@ aggregate.nlist <- function(x, fun = mean, ...) {
 #' @examples
 #' aggregate(nlists(nlist(x = 1:3), nlist(x = 2:4)))
 aggregate.nlists <- function(x, fun = mean, ..., by_chain = FALSE) {
+  deprecate_soft("0.1.1",
+    what = "nlist::aggregate.nlists()",
+    with = "nlist::estimates.nlists()"
+  )
   chk_function(fun)
   chk_flag(by_chain)
   if (!by_chain) {
     x <- transpose(x)
     x <- lapply(x, aggregate_atomic_numerics, fun, ...)
-    return(as.nlist(x))
+    return(as_nlist(x))
   }
   nchains <- nchains(x)
   x <- split_by_chains(x)

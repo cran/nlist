@@ -7,21 +7,26 @@
 \method{npdims}{nlist}(x, ...)
 }
 \arguments{
-\item{x}{The nlist object}
+\item{x}{An object.}
 
-\item{...}{Unused.}
+\item{...}{Other arguments passed to methods.}
 }
 \value{
-A named list of the number of dimensions of each numeric atomic object.
+A named integer vector of the number of dimensions of each parameter.
 }
 \description{
-Gets the number of dimensions of each \code{\link[=natomic_object]{natomic_object()}} in an
-\code{\link[=nlist_object]{nlist_object()}}.
+Gets the number of the dimensions of each parameter of an object.
+
+The default methods returns the length of each element of \code{\link[universals:pdims]{pdims()}}
+as an integer vector.
 }
 \examples{
-term::npdims(nlist(x = 1:3))
-term::npdims(nlist(y = 3, zz = matrix(2:5, 2)))
+npdims(nlist(x = 1:3))
+npdims(nlist(y = 3, zz = matrix(2:5, 2)))
 }
 \seealso{
-\code{\link[=pdims]{pdims()}}
+Other dimensions: 
+\code{\link[universals]{dims}()},
+\code{\link[universals]{ndims}()},
+\code{\link[universals]{pdims}()}
 }

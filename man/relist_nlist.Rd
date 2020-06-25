@@ -12,7 +12,7 @@ relist_nlist(flesh, skeleton)
 \item{skeleton}{An nlist object.}
 }
 \value{
-An atomic numeric vector of the values in x.
+A numeric vector of the values in x.
 }
 \description{
 Relists an nlist object that has been unlisted to a named numeric vector.
@@ -22,5 +22,5 @@ Ensures absent terms are included and preserves integer class.
 relist_nlist(c(`a[2]` = 5), nlist(a = 1:3))
 }
 \seealso{
-\code{\link[=as.nlist.numeric]{as.nlist.numeric()}} and \code{\link[=unlist_nlist]{unlist_nlist()}}
+\code{\link[=as_nlist.numeric]{as_nlist.numeric()}} and \code{\link[=unlist_nlist]{unlist_nlist()}}
 }

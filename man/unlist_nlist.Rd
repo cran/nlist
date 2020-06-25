@@ -10,15 +10,15 @@ unlist_nlist(x)
 \item{x}{An nlist object.}
 }
 \value{
-An named atomic numeric vector of the values in x.
+A named numeric vector of the values in x.
 }
 \description{
-Simplifies an nlist object to an named atomic vector
+Simplifies an nlist object to an named numeric vector
 where the names are the terms.
 }
 \examples{
 unlist_nlist(nlist(y = 2, x = matrix(4:7, ncol = 2)))
 }
 \seealso{
-\code{\link[=as.nlist.numeric]{as.nlist.numeric()}} and \code{\link[=relist_nlist]{relist_nlist()}}
+\code{\link[=as_nlist.numeric]{as_nlist.numeric()}} and \code{\link[=relist_nlist]{relist_nlist()}}
 }

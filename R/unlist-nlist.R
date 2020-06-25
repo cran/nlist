@@ -1,11 +1,11 @@
 #' Flatten nlist Object
 #'
-#' Simplifies an nlist object to an named atomic vector
+#' Simplifies an nlist object to an named numeric vector
 #' where the names are the terms.
 #'
 #' @param x An nlist object.
-#' @return An named atomic numeric vector of the values in x.
-#' @seealso [as.nlist.numeric()] and [relist_nlist()]
+#' @return A named numeric vector of the values in x.
+#' @seealso [as_nlist.numeric()] and [relist_nlist()]
 #' @export
 #' @examples
 #' unlist_nlist(nlist(y = 2, x = matrix(4:7, ncol = 2)))
@@ -13,7 +13,8 @@ unlist_nlist <- function(x) {
   chk_s3_class(x, "nlist")
   y <- unlist(unclass(x))
   if (is.null(y)) y <- numeric(0)
-  names(y) <- as.term(x)
+  y <- as.numeric(y)
+  names(y) <- as_term(x)
   y
 }
 
@@ -22,7 +23,7 @@ unlist_nlist <- function(x) {
 #' @param x An nlist object.
 #' @param recursive Ignored.
 #' @param use.names A flag specifying whether to preserve names.
-#' @return An named atomic numeric vector of the values in x.
+#' @return A named numeric vector of the values in x.
 #' @seealso [unlist_nlist()]
 #' @method unlist nlist
 #' @export
@@ -33,4 +34,10 @@ unlist.nlist <- function(x, recursive = TRUE, use.names = TRUE) {
   x <- unlist_nlist(x)
   if (!use.names) x <- unname(x)
   x
+}
+
+#' @method unlist nlists
+#' @export
+unlist.nlists <- function(x, recursive = TRUE, use.names = TRUE) {
+  stop("`unlist()` is not defined for nlists objects.")
 }

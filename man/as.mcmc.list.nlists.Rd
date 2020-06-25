@@ -4,10 +4,10 @@
 \alias{as.mcmc.list.nlists}
 \title{As mcmc Object}
 \usage{
-as.mcmc.list.nlists(x, ...)
+\method{as.mcmc}{list.nlists}(x, ...)
 }
 \arguments{
-\item{x}{A nlists object.}
+\item{x}{An object.}
 
 \item{...}{Unused.}
 }

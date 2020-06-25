@@ -1,5 +1,3 @@
-context("c")
-
 test_that("c.nlist", {
   expect_identical(c(nlist()), nlist())
   expect_identical(c(nlist(x = 1)), nlist(x = 1))
@@ -12,7 +10,7 @@ test_that("c.nlist", {
   expect_identical(c(nlist(), nlist(x = 1)), nlist(x = 1))
   expect_error(
     c(nlist(x = 1), nlist(x = 1)),
-    "^nlist objects must have distinctly named natomic elements in order to be concatenated[.]$"
+    "^nlist objects must have distinctly named numeric elements in order to be concatenated[.]$"
   )
 })
 

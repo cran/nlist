@@ -7,20 +7,29 @@
 \method{nterms}{nlists}(x, ...)
 }
 \arguments{
-\item{x}{The object.}
+\item{x}{An object.}
 
-\item{...}{Unused.}
+\item{...}{Other arguments passed to methods.}
 }
 \value{
-A count of the number of terms.
+A integer scalar of the number of terms.
 }
 \description{
-Gets the number of terms of an \code{\link[=nlists_object]{nlists_object()}}.
+Gets the number of terms
+of an MCMC object.
 }
 \examples{
-term::nterms(nlists(nlist(x = 1:3)))
-term::nterms(nlists(
+nterms(nlists(nlist(x = 1:3)))
+nterms(nlists(
   nlist(y = 3, zz = matrix(2:5, 2)),
   nlist(y = 5, zz = matrix(1:4, 2))
 ))
+}
+\seealso{
+Other MCMC dimensions: 
+\code{\link[universals]{nchains}()},
+\code{\link[universals]{niters}()},
+\code{\link[universals]{npars}()},
+\code{\link[universals]{nsams}()},
+\code{\link[universals]{nsims}()}
 }

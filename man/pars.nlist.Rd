@@ -4,26 +4,31 @@
 \alias{pars.nlist}
 \title{Parameter Names}
 \usage{
-\method{pars}{nlist}(x, scalar = NA, terms = FALSE, ...)
+\method{pars}{nlist}(x, scalar = NULL, terms = FALSE, ...)
 }
 \arguments{
-\item{x}{An nlist object.}
+\item{x}{An object.}
 
-\item{scalar}{A logical scalar specifying whether to get the names of
-all parameters (NA), only scalars (TRUE) or all parameters
+\item{scalar}{A logical scalar specifying whether to include
+all parameters (NULL), only scalars (TRUE) or all parameters
 except scalars (FALSE).}
 
 \item{terms}{A flag specifying whether to return the parameter name
-for each term.}
+for each term element.}
 
-\item{...}{Unused.}
+\item{...}{Other arguments passed to methods.}
 }
 \value{
-A character vector of the parameter names.
+A character vector of the names of the parameters.
 }
 \description{
-Gets the parameter names for an \code{\link[=nlist_object]{nlist_object()}}.
+Gets the parameter names.
 }
 \examples{
-term::pars(nlist(zz = 1, y = 3:6))
+pars(nlist(zz = 1, y = 3:6))
+}
+\seealso{
+Other parameters: 
+\code{\link[universals]{npars}()},
+\code{\link[universals]{set_pars}()}
 }
