@@ -1,11 +1,32 @@
+#' Coerce to mcmc Object
+#'
+#' Coerce an R object to an mcmc object.
+#'
+#' @inheritParams params
+#' @return An mcmc object.
 #' @export
-coda::as.mcmc
+as_mcmc <- function(x, ...) {
+  UseMethod("as_mcmc")
+}
 
-#' @inherit coda::as.mcmc
+#' @export
+as_mcmc.mcmc <- function(x, ...) x
+
+#' @describeIn as_mcmc Coerce an mcmc.list object to an mcmc object.
 #' @export
 #' @examples
-#' as.mcmc(nlist(x = matrix(1:6, 2)))
-as.mcmc.nlist <- function(x, ...) {
+#' as_mcmc(as_mcmc_list(nlists(nlist(x = 2), nlist(x = 3))))
+as_mcmc.mcmc.list <- function(x, ...) {
+  x <- collapse_chains(x)
+  x[[1]]
+}
+
+#' @describeIn as_mcmc Coerce an nlist object to an mcmc object.
+#' @export
+#' @examples
+#' as_mcmc(nlist(x = matrix(1:6, 2)))
+as_mcmc.nlist <- function(x, ...) {
+  chk_unused(...)
   if (!length(x)) {
     return(as.mcmc(numeric(0)))
   }
@@ -18,18 +39,37 @@ as.mcmc.nlist <- function(x, ...) {
   coda::mcmc(x)
 }
 
-#' @inherit coda::as.mcmc
+#' @describeIn as_mcmc Coerce an nlists object to an mcmc object.
 #' @export
 #' @examples
-#' as.mcmc(nlists(
+#' as_mcmc(nlists(
 #'   nlist(x = matrix(1:6, 2)),
 #'   nlist(x = matrix(3:8, 2))
 #' ))
-as.mcmc.nlists <- function(x, ...) {
+as_mcmc.nlists <- function(x, ...) {
+  chk_unused(...)
   if (!length(x)) {
     return(as.mcmc(numeric(0)))
   }
-  x <- lapply(x, FUN = coda::as.mcmc)
+  x <- lapply(x, FUN = as_mcmc)
   x <- do.call("rbind", x)
   coda::mcmc(x)
+}
+
+#' @importFrom coda as.mcmc
+#' @export
+coda::as.mcmc
+
+#' @export
+as.mcmc.nlist <- function(x, ...) {
+  deprecate_soft("0.2.1", "as.mcmc()", "as_mcmc()", id = "as_mcmc")
+  chk_unused(...)
+  as_mcmc(x)
+}
+
+#' @export
+as.mcmc.nlists <- function(x, ...) {
+  deprecate_soft("0.2.1", "as.mcmc()", "as_mcmc()", id = "as_mcmc")
+  chk_unused(...)
+  as_mcmc(x)
 }

@@ -1,6 +1,6 @@
 Package: nlist
 Title: Lists of Numeric Atomic Objects
-Version: 0.2.0
+Version: 0.3.0
 Authors@R: c(
     person("Joe", "Thorley", , "joe@poissonconsulting.ca", c("aut", "cre"), comment = c(ORCID = "0000-0002-7683-4592")),
     person("Poisson Consulting", role = c("cph", "fnd"))
@@ -18,18 +18,18 @@ License: MIT + file LICENSE
 URL: https://github.com/poissonconsulting/nlist
 BugReports: https://github.com/poissonconsulting/nlist/issues
 Depends: R (>= 3.4)
-Imports: stats, chk, term (>= 0.2.0), coda, abind, purrr, generics,
-        tibble, universals, extras, lifecycle
+Imports: stats, chk, term, coda, abind, purrr, generics, tibble,
+        universals, extras, lifecycle
 Suggests: covr, testthat, rlang
 RdMacros: lifecycle
 Encoding: UTF-8
 Language: en-US
 LazyData: true
-RoxygenNote: 7.1.0.9000
+RoxygenNote: 7.1.1
 NeedsCompilation: no
-Packaged: 2020-06-25 19:28:46 UTC; joe
+Packaged: 2020-09-25 19:26:21 UTC; joe
 Author: Joe Thorley [aut, cre] (<https://orcid.org/0000-0002-7683-4592>),
   Poisson Consulting [cph, fnd]
 Maintainer: Joe Thorley <joe@poissonconsulting.ca>
 Repository: CRAN
-Date/Publication: 2020-06-25 20:20:03 UTC
+Date/Publication: 2020-09-25 20:00:11 UTC

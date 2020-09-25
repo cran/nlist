@@ -32,3 +32,8 @@ set_dim <- function(x, value) {
   if (length(value) == 1L) dim(x) <- NULL
   x
 }
+
+set_class <- function(x, class) {
+  class(x) <- class
+  x
+}

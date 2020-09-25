@@ -1,3 +1,12 @@
+# nlist 0.3.0
+
+Added 
+  - `collapse_chains()` for mcmc and mcmc.list objects.
+  - `pars<-`
+Soft deprecated
+  - `as.mcmc.list()` for `as_mcmc_list()`.
+  - `as.mcmc()` for `as_mcmc()`.
+
 # nlist 0.2.0
 
 ## Breaking changes
