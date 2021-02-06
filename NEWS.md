@@ -1,3 +1,8 @@
+# nlist 0.3.1
+
+- Added `as_nlists.mcmc.list()`.
+- Added `simplify = FALSE` argument to `tidy()` and soft deprecated for `simplify = TRUE` so that replace `sd`, `zscore` and `pvalue` columns with `svalue`.
+
 # nlist 0.3.0
 
 Added 

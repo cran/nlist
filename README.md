@@ -6,9 +6,8 @@
 <!-- badges: start -->
 
 [![Lifecycle:
-maturing](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www.tidyverse.org/lifecycle/#maturing)
-[![R build
-status](https://github.com/poissonconsulting/nlist/workflows/R-CMD-check/badge.svg)](https://github.com/poissonconsulting/nlist/actions)
+stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://lifecycle.r-lib.org/articles/stages.html#stable)
+[![R-CMD-check](https://github.com/poissonconsulting/nlist/workflows/R-CMD-check/badge.svg)](https://github.com/poissonconsulting/nlist/actions)
 [![Codecov test
 coverage](https://codecov.io/gh/poissonconsulting/nlist/branch/master/graph/badge.svg)](https://codecov.io/gh/poissonconsulting/nlist?branch=master)
 [![License:
@@ -18,16 +17,16 @@ status](https://www.r-pkg.org/badges/version/nlist)](https://cran.r-project.org/
 ![CRAN downloads](http://cranlogs.r-pkg.org/badges/nlist)
 <!-- badges: end -->
 
-nlist is an R package to create and manipulate numeric list (nlist)
+`nlist` is an R package to create and manipulate numeric list (`nlist`)
 objects.
 
-An nlist is an S3 class list of uniquely named numeric objects. An
-numeric object is an integer or double vector, matrix or array. nlist
+An `nlist` is an S3 class list of uniquely named numeric objects. An
+numeric object is an integer or double vector, matrix or array. `nlist`
 objects are the raw data inputs for analytic engines such as JAGS, STAN
 and TMB.
 
-An nlists object is a S3 class list of nlist objects with the same
-names, dimensionalities and typeofs. nlists objects are useful for
+An `nlists` object is a S3 class list of `nlist` objects with the same
+names, dimensionalities and typeofs. `nlists` objects are useful for
 storing multiple realizations of simulated data sets. They can be
 converted to `coda::mcmc` and `coda::mcmc.list` objects.
 
@@ -55,19 +54,17 @@ An numeric object is an integer or double vector, matrix or array.
 
 ``` r
 library(nlist)
-is_numeric(TRUE)
-#> [1] FALSE
-is_numeric(1L)
+is.numeric(1L)
 #> [1] TRUE
-is_numeric(matrix(1:3))
+is.numeric(matrix(1:3))
 #> [1] TRUE
 ```
 
 ### `nlist`
 
-An nlist is an S3 class list of uniquely named numeric objects.
+An `nlist` is an S3 class list of uniquely named numeric objects.
 
-It is straightforward to create an new nlist object.
+It is straightforward to create an new `nlist` object.
 
 ``` r
 library(nlist)
@@ -88,7 +85,7 @@ nlist
 
 ### `nlists`
 
-An nlists object is a S3 class list of nlist objects with the same
+An `nlists` object is a S3 class list of `nlist` objects with the same
 names, dimensionalities and typeofs.
 
 The nchains attribute is used to keep track of the number of chains.
@@ -118,7 +115,7 @@ print(nlists)
 
 #### nlist
 
-A data.frame can be coerced to an nlist object
+A data.frame can be coerced to an `nlist` object
 
 ``` r
 data <- data.frame(
@@ -144,7 +141,7 @@ And an `nlist` objects can be converted to an `mcmc` or `term_frame`
 objects (and converted back again)
 
 ``` r
-as.mcmc(nlist)
+as_mcmc(nlist)
 #> Markov Chain Monte Carlo (MCMC) output:
 #> Start = 1 
 #> End = 1 
@@ -188,27 +185,27 @@ while the `tidy()` function treats the values as if they are MCMC
 samples and summarises the terms as a tidy tibble.
 
 ``` r
-tidy(nlists)
-#> # A tibble: 10 x 7
-#>    term   estimate    sd zscore  lower upper svalue
-#>    <term>    <dbl> <dbl>  <dbl>  <dbl> <dbl>  <dbl>
-#>  1 x          -0.5  51.8 -0.440 -92.6   9.32  0    
-#>  2 y[1,1]      1.5  11.0  0.524  -1.77 20.5   0.737
-#>  3 y[2,1]      2.5  11.5  0.545  -2.62 21.5   0.737
-#>  4 y[3,1]      3.5  12.0  0.561  -3.47 22.5   0.737
-#>  5 y[1,2]      4.5  12.7  0.573  -4.32 23.5   0.737
-#>  6 y[2,2]      5.5  13.3  0.582  -5.17 24.5   0.737
-#>  7 y[3,2]      6.5  14.0  0.588  -6.02 25.5   0.737
-#>  8 y[1,3]      7.5  14.8  0.592  -6.87 26.5   0.737
-#>  9 y[2,3]      8.5  15.5  0.595  -7.72 27.5   0.737
-#> 10 y[3,3]      9.5  16.3  0.597  -8.57 28.5   0.737
+tidy(nlists, simplify = TRUE)
+#> # A tibble: 10 x 5
+#>    term   estimate  lower upper svalue
+#>    <term>    <dbl>  <dbl> <dbl>  <dbl>
+#>  1 x          -0.5 -92.6   9.32  0    
+#>  2 y[1,1]      1.5  -1.77 20.5   0.737
+#>  3 y[2,1]      2.5  -2.62 21.5   0.737
+#>  4 y[3,1]      3.5  -3.47 22.5   0.737
+#>  5 y[1,2]      4.5  -4.32 23.5   0.737
+#>  6 y[2,2]      5.5  -5.17 24.5   0.737
+#>  7 y[3,2]      6.5  -6.02 25.5   0.737
+#>  8 y[1,3]      7.5  -6.87 26.5   0.737
+#>  9 y[2,3]      8.5  -7.72 27.5   0.737
+#> 10 y[3,3]      9.5  -8.57 28.5   0.737
 ```
 
-An nlists object can be converted to an mcmc.list object and a
-term\_frame.
+An `nlists` object can be converted to an `mcmc.list` object and a
+`term_frame`.
 
 ``` r
-coda::as.mcmc.list(nlists)
+as_mcmc_list(nlists)
 #> [[1]]
 #> Markov Chain Monte Carlo (MCMC) output:
 #> Start = 1 
@@ -266,10 +263,20 @@ as_term_frame(nlists)
 #> 40 y[3,3]      4   -10
 ```
 
-An nlists object can have its chains split or collapsed.
+An `nlists` object can have its chains split or collapsed.
 
 ``` r
-nlists <- split_chains(nlists)
+split_chains(nlists)
+#> $x
+#> [1] -0.5
+#> 
+#> $y
+#>      [,1] [,2] [,3]
+#> [1,]  1.5  4.5  7.5
+#> [2,]  2.5  5.5  8.5
+#> [3,]  3.5  6.5  9.5
+#> 
+#> an nlists object with 2 chains of 2 nlist objects each with 2 numeric elements
 ```
 
 ## Contribution
