@@ -1,6 +1,6 @@
 Package: nlist
 Title: Lists of Numeric Atomic Objects
-Version: 0.3.1
+Version: 0.3.2
 Authors@R: 
     c(person(given = "Joe",
              family = "Thorley",
@@ -28,12 +28,11 @@ Suggests: covr, rlang, testthat
 RdMacros: lifecycle
 Encoding: UTF-8
 Language: en-US
-LazyData: true
 RoxygenNote: 7.1.1
 NeedsCompilation: no
-Packaged: 2021-02-06 21:39:42 UTC; joe
+Packaged: 2021-08-04 17:23:17 UTC; joe
 Author: Joe Thorley [aut, cre] (<https://orcid.org/0000-0002-7683-4592>),
   Poisson Consulting [cph, fnd]
 Maintainer: Joe Thorley <joe@poissonconsulting.ca>
 Repository: CRAN
-Date/Publication: 2021-02-06 22:00:03 UTC
+Date/Publication: 2021-08-05 04:20:14 UTC

@@ -1,3 +1,9 @@
+<!-- NEWS.md is maintained by https://cynkra.github.io/fledge, do not edit -->
+
+# nlist 0.3.2
+
+- Fixed `complete_terms.mcmc()` so now returns warning when `silent = FALSE` and invalid or inconsistent terms are dropped.
+
 # nlist 0.3.1
 
 - Added `as_nlists.mcmc.list()`.

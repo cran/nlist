@@ -9,9 +9,8 @@ term::complete_terms
 #' The terms are repaired before being completed.
 #' Missing or invalid or inconsistent terms are dropped with a warning.
 #'
+#' @inheritParams params
 #' @param x An mcmc object.
-#' @param silent A flag specifying whether to suppress warning messages.
-#' @param ... Unused
 #' @return The repaired and complete mcmc object.
 #' @export
 #'
@@ -30,13 +29,13 @@ complete_terms.mcmc <- function(x, silent = FALSE, ...) {
   x <- as.matrix(x)
   x <- x[,!is.na(colnames(x)), drop = FALSE]
   colnames(x) <- as.character(as_term(colnames(x), repair = TRUE))
-  if (anyNA(!silent && anyNA(colnames(x)))) wrn("invalid terms have been dropped")
+  if (!silent && anyNA(colnames(x))) wrn("invalid terms have been dropped")
   x <- x[, !is.na(colnames(x)), drop = FALSE]
   if (!ncol(x)) {
     return(coda::as.mcmc(x))
   }
   consistent <- consistent_term(as_term(colnames(x)))
-  if (anyNA(!silent && any(!consistent))) {
+  if (!silent && any(!consistent)) {
     wrn("inconsistent terms have been dropped")
   }
   x <- x[, consistent, drop = FALSE]
