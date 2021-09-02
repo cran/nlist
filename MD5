@@ -1,7 +1,7 @@
-ba262b637953ebdd34985c052b34a143 *DESCRIPTION
+1139cb683c63301b0f742d86e08d5a4f *DESCRIPTION
 5681489d856e788b5885d1042912c4f4 *LICENSE
 5b1676c39b4cd7e996decb3a50e480c4 *NAMESPACE
-6ec4df37c1374d81b0e734e0de65a8fd *NEWS.md
+b363565fae6bce47c5cba7f0ba0520e8 *NEWS.md
 38c7c958311135e2d5752f25755c0750 *R/aggregate.R
 59c18a3b5044966e7ab51f372d1c4d31 *R/any-na.R
 43336db350fa4c6be02300a3aea8ded3 *R/as-list.R
@@ -11,7 +11,7 @@ bed1170b4d79d71cc8a808f4eecb967c *R/as-mcmc-list.R
 f647156419ab9d1eb22370ffeb2f59e9 *R/as-nlists.R
 1c270999a6f248d07a9f23b581b18fe7 *R/as-term-frame.R
 2c9ccb598632822e5ba6d7f1b15f6c39 *R/as-term.R
-9064f410d784867814457c828ebae6bd *R/bind-iterations.R
+9cd3d334eeb03cad319ca6672d45851a *R/bind-iterations.R
 d3f973d0bd6e7b4f8292f932f9e4d771 *R/brackets.R
 4ceaced7f51aa4bd69420bf94fd59529 *R/c.R
 b3184f293c306d6b48cfb452f819f823 *R/chk.R
@@ -35,7 +35,7 @@ d64677e9f7a122bbd6e75f13ddafd631 *R/nsims.R
 996e4455aae710d7310f22cd0547f4ef *R/nterms.R
 0e6d7f4701c4608206eb2c05b13a6f92 *R/numericise.R
 2a9e4e49e2024c432dac0864d96737b4 *R/params.R
-e46f4cd2e68e7b35407949519ab03de3 *R/pars.R
+293b25ab9221f0e1f332048e0083032c *R/pars.R
 d7ce6fc614bb20b936f6f69d8fc9cd96 *R/pdims.R
 d7a4e67d26d41d7aa0d5849c4be91da0 *R/print.R
 a595bb5b5f6a208a69f2ca41ed33818c *R/relist-nlist.R
@@ -49,8 +49,8 @@ c805be6695c85d9bb84856af172d8e73 *R/thin.R
 d41d8cd98f00b204e9800998ecf8427e *R/utils.R
 e3bdb3c3b2aca7226dbaa0f1811a5270 *R/vld.R
 68ddc3eaf8deb31b2495f10e8f5ce3fa *README.md
-6c0ff86572f8774d0c44bf42c8d83826 *build/nlist.pdf
-2f7b0a9e6eadad69901b455e2a037a1b *inst/WORDLIST
+c9e17f2653c0d628b97a68d5f1356e1c *build/nlist.pdf
+ab8a721790843a29d936eaf5b63429e3 *inst/WORDLIST
 18d78a26d5b4cd04ab0cb39c12bca87f *man/aggregate.nlist.Rd
 23c0cfd00fb8a20ffaabbaf7daa8ebdc *man/aggregate.nlists.Rd
 0cbcb14941a76447a898257d72240830 *man/as_mcmc.Rd
@@ -140,7 +140,7 @@ b08203f84663651f0d354cccd60f4397 *tests/testthat/test-aggregate.R
 c82e19d3ab55e971c7b93bca7bce62bf *tests/testthat/test-as-list.R
 0609ad20a4ce2ea7250cfb5fc0611694 *tests/testthat/test-as-mcmc-list.R
 572951efda924f7c2702a763d9dd44d4 *tests/testthat/test-as-mcmc.R
-af5dac41cb4356645cde709a927b1907 *tests/testthat/test-as-nlist.R
+0c1daa86a0279013ab5ea29d94e1e9a9 *tests/testthat/test-as-nlist.R
 ec3d31b65f507614178fd8b0656d2a3a *tests/testthat/test-as-nlists.R
 238fd703ce3c3457d47ebfb8d134f355 *tests/testthat/test-as-term-frame.R
 5d00a142513ea29b870ca537563ce74b *tests/testthat/test-as-term.R
@@ -169,7 +169,7 @@ dafae8e0de64e6a2fa7799b9d996fde0 *tests/testthat/test-nlist.R
 bd3cb5f9b9409bbca58caf83c5062338 *tests/testthat/test-relist-nlist.R
 e351f5eded9a510d8cf64989cf48dfe4 *tests/testthat/test-set-pars.R
 b32a22cbc780cc320f94999795f769a6 *tests/testthat/test-split-chains.R
-0a921eebdf3fb5e2fe2e8600263a8d44 *tests/testthat/test-subset.R
+2b9f50cb333b27bde61093e2af407524 *tests/testthat/test-subset.R
 9379ba84573b5e66183cfcad012a1be2 *tests/testthat/test-thin.R
 2eb2ef2f858c6b7c4d5ee2f92c85b519 *tests/testthat/test-tidy.R
 16fb4ae34cf5db9044805fa20bb9fd8d *tests/testthat/test-unlist-nlist.R

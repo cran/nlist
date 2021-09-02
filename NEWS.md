@@ -1,5 +1,11 @@
 <!-- NEWS.md is maintained by https://cynkra.github.io/fledge, do not edit -->
 
+# nlist 0.3.3
+
+- Speed up `bind_iterations.mcmc.list()` by replacing `chk::chkor()` with custom test and message.
+- Fix `pars.mcmc.list()` so that no longer gives deprecation warning for `terms = FALSE` argument if not provided by user.
+- Switch to testthat edition 3.
+
 # nlist 0.3.2
 
 - Fixed `complete_terms.mcmc()` so now returns warning when `silent = FALSE` and invalid or inconsistent terms are dropped.
