@@ -1,14 +1,17 @@
 Package: nlist
 Title: Lists of Numeric Atomic Objects
-Version: 0.3.3
-Authors@R: 
-    c(person(given = "Joe",
-             family = "Thorley",
-             role = c("aut", "cre"),
-             email = "joe@poissonconsulting.ca",
-             comment = c(ORCID = "0000-0002-7683-4592")),
-      person(given = "Poisson Consulting",
-             role = c("cph", "fnd")))
+Version: 0.4.0
+Authors@R: c(
+    person("Joe", "Thorley", , "joe@poissonconsulting.ca", role = c("aut", "cre"),
+           comment = c(ORCID = "0000-0002-7683-4592")),
+    person("Kirill", "Müller", role = "ctb",
+           comment = c(ORCID = "0000-0002-1416-3412")),
+    person("Nadine", "Hussein", role = "ctb",
+           comment = c(ORCID = "0000-0003-4470-8361")),
+    person("Ayla", "Pearson", role = "ctb",
+           comment = c(ORCID = "0000-0001-7388-1222")),
+    person("Poisson Consulting", role = c("cph", "fnd"))
+  )
 Description: Create and manipulate numeric list ('nlist') objects.  An
     'nlist' is an S3 list of uniquely named numeric objects.  An numeric
     object is an integer or double vector, matrix or array.  An 'nlists'
@@ -21,19 +24,24 @@ Description: Create and manipulate numeric list ('nlist') objects.  An
 License: MIT + file LICENSE
 URL: https://github.com/poissonconsulting/nlist
 BugReports: https://github.com/poissonconsulting/nlist/issues
-Depends: R (>= 3.4)
-Imports: abind, chk, coda, extras, generics, lifecycle, purrr, stats,
-        term, tibble, universals
-Suggests: covr, rlang, testthat
+Depends: R (>= 4.0)
+Imports: abind, chk, coda, extras, generics, lifecycle, purrr, rlang,
+        stats, term, tibble, universals
+Suggests: covr, knitr, mcmcr, rmarkdown, testthat
+VignetteBuilder: knitr
 RdMacros: lifecycle
+Config/Needs/website: poissonconsulting/poissontemplate
 Config/testthat/edition: 3
 Encoding: UTF-8
 Language: en-US
-RoxygenNote: 7.1.1
+RoxygenNote: 7.3.2.9000
 NeedsCompilation: no
-Packaged: 2021-09-01 14:20:06 UTC; joe
-Author: Joe Thorley [aut, cre] (<https://orcid.org/0000-0002-7683-4592>),
+Packaged: 2025-05-11 23:20:50 UTC; joe
+Author: Joe Thorley [aut, cre] (ORCID: <https://orcid.org/0000-0002-7683-4592>),
+  Kirill Müller [ctb] (ORCID: <https://orcid.org/0000-0002-1416-3412>),
+  Nadine Hussein [ctb] (ORCID: <https://orcid.org/0000-0003-4470-8361>),
+  Ayla Pearson [ctb] (ORCID: <https://orcid.org/0000-0001-7388-1222>),
   Poisson Consulting [cph, fnd]
 Maintainer: Joe Thorley <joe@poissonconsulting.ca>
 Repository: CRAN
-Date/Publication: 2021-09-02 14:50:05 UTC
+Date/Publication: 2025-05-12 00:00:02 UTC

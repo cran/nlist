@@ -15,7 +15,7 @@ as_nlists <- function(x, ...) {
 #' @rdname as_nlist
 #' @export
 as.nlists <- function(x, ...) {
-  deprecate_soft("0.1.1",
+  deprecate_warn("0.1.1",
     what = "nlist::as.nlists()",
     with = "nlist::as_nlists()"
   )
@@ -35,11 +35,8 @@ as_nlists.list <- function(x, ...) {
 #' @export
 as_nlists.mcmc <- function(x, ...) {
   chk_unused(...)
-  x <- complete_terms(x)
-  x <- lapply(1:nrow(x), function(iter, x) subset(x, iter), x = x)
-  x <- lapply(x, as_nlist)
-  class(x) <- "nlists"
-  x
+  rlang::check_installed("mcmcr", "to convert mcmc objects to nlist.")
+  mcmcr::as_nlists(mcmcr::as.mcmcr(x))
 }
 
 #' @describeIn as_nlists Coerce mcmc.list to nlists
@@ -48,8 +45,9 @@ as_nlists.mcmc.list <- function(x, ...) {
   nchains <- nchains(x)
   x <- as_mcmc(x)
   x <- as_nlists(x)
-  if(nchains != 1L)
+  if (nchains != 1L) {
     attr(x, "nchains") <- nchains
+  }
   x
 }
 

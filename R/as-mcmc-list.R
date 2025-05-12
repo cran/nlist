@@ -31,7 +31,6 @@ as_mcmc_list.nlist <- function(x, ...) {
 
 #' @describeIn as_mcmc_list Coerce an nlists object to an mcmc.list object.
 #' @export
-#' @examples
 #'
 #' @examples
 #' as_mcmc_list(nlists(
@@ -48,16 +47,17 @@ as_mcmc_list.nlists <- function(x, ...) {
   coda::as.mcmc.list(x)
 }
 
+#' @export
+coda::as.mcmc.list
+
 #' @method as.mcmc.list nlist
 #' @export
 as.mcmc.list.nlist <- function(x, ...) {
-  deprecate_soft("0.2.1", "as.mcmc.list()", "as_mcmc_list()", id = "as_mcmc_list")
   as_mcmc_list(x, ...)
 }
 
 #' @method as.mcmc.list nlists
 #' @export
 as.mcmc.list.nlists <- function(x, ...) {
-  deprecate_soft("0.2.1", "as.mcmc.list()", "as_mcmc_list()", id = "as_mcmc_list")
   as_mcmc_list(x, ...)
 }

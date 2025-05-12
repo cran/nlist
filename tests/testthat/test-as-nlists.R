@@ -37,7 +37,7 @@ test_that("as_nlists.mcmc.list 2 chains", {
     nlist(x = 3, y = matrix(4:1, 2))
   )
   nlists <- split_chains(nlists)
-  
+
   expect_equal(as_nlists(as_mcmc_list(nlists)), nlists)
   expect_equal(nchains(as_nlists(as_mcmc_list(nlists))), 2L)
 })
@@ -58,7 +58,7 @@ test_that("as_nlists.nlist", {
 })
 
 test_that("as.nlists deprecated", {
-  rlang::scoped_options(lifecycle_verbosity = "quiet")
+  rlang::local_options(lifecycle_verbosity = "quiet")
   lifecycle::expect_deprecated(as.nlists(nlist(x = 1)))
 
   expect_identical(

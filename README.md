@@ -1,20 +1,20 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# nlist
+# nlist <img src="man/figures/logo.png" align="right" alt="nlist logo"/>
 
 <!-- badges: start -->
 
 [![Lifecycle:
 stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://lifecycle.r-lib.org/articles/stages.html#stable)
-[![R-CMD-check](https://github.com/poissonconsulting/nlist/workflows/R-CMD-check/badge.svg)](https://github.com/poissonconsulting/nlist/actions)
+[![R-CMD-check](https://github.com/poissonconsulting/nlist/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/poissonconsulting/nlist/actions/workflows/R-CMD-check.yaml)
 [![Codecov test
-coverage](https://codecov.io/gh/poissonconsulting/nlist/branch/master/graph/badge.svg)](https://codecov.io/gh/poissonconsulting/nlist?branch=master)
+coverage](https://codecov.io/gh/poissonconsulting/nlist/graph/badge.svg)](https://app.codecov.io/gh/poissonconsulting/nlist)
 [![License:
-MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
+MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/license/mit)
 [![CRAN
 status](https://www.r-pkg.org/badges/version/nlist)](https://cran.r-project.org/package=nlist)
-![CRAN downloads](http://cranlogs.r-pkg.org/badges/nlist)
+![CRAN downloads](https://cranlogs.r-pkg.org/badges/nlist)
 <!-- badges: end -->
 
 `nlist` is an R package to create and manipulate numeric list (`nlist`)
@@ -29,22 +29,6 @@ An `nlists` object is a S3 class list of `nlist` objects with the same
 names, dimensionalities and typeofs. `nlists` objects are useful for
 storing multiple realizations of simulated data sets. They can be
 converted to `coda::mcmc` and `coda::mcmc.list` objects.
-
-## Installation
-
-To install the latest release from [CRAN](https://cran.r-project.org)
-
-``` r
-install.packages("nlist")
-```
-
-To install the developmental version from
-[GitHub](https://github.com/poissonconsulting/nlist)
-
-``` r
-# install.packages("remotes")
-remotes::install_github("poissonconsulting/nlist")
-```
 
 ## Demonstration
 
@@ -186,7 +170,7 @@ samples and summarises the terms as a tidy tibble.
 
 ``` r
 tidy(nlists, simplify = TRUE)
-#> # A tibble: 10 x 5
+#> # A tibble: 10 × 5
 #>    term   estimate  lower upper svalue
 #>    <term>    <dbl>  <dbl> <dbl>  <dbl>
 #>  1 x          -0.5 -92.6   9.32  0    
@@ -277,6 +261,36 @@ split_chains(nlists)
 #> [3,]  3.5  6.5  9.5
 #> 
 #> an nlists object with 2 chains of 2 nlist objects each with 2 numeric elements
+```
+
+## Installation
+
+### Release
+
+To install the release version from
+[CRAN](https://CRAN.R-project.org/package=nlist).
+
+``` r
+install.packages("nlist")
+```
+
+The website for the release version is at
+<https://poissonconsulting.github.io/nlist/>.
+
+### Development
+
+To install the development version from
+[GitHub](https://github.com/poissonconsulting/nlist)
+
+``` r
+# install.packages("remotes")
+remotes::install_github("poissonconsulting/nlist")
+```
+
+or from [r-universe](https://poissonconsulting.r-universe.dev/nlist).
+
+``` r
+install.packages("nlist", repos = c("https://poissonconsulting.r-universe.dev", "https://cloud.r-project.org"))
 ```
 
 ## Contribution

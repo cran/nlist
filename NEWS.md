@@ -1,4 +1,11 @@
-<!-- NEWS.md is maintained by https://cynkra.github.io/fledge, do not edit -->
+<!-- NEWS.md is maintained by https://fledge.cynkra.com, contributors should not edit this file -->
+
+# nlist 0.4.0
+
+- Exported `coda::as.mcmc.list`.
+- Added mcmcr as suggested dependency to removal speed bottleneck in `as_nlists.mcmc()` (#31, #44).
+- No longer deprecate `as.mcmc` and `as.mcmc.list` (#43).
+- Warn-deprecated all soft-deprecated functions.
 
 # nlist 0.3.3
 
